@@ -10,5 +10,6 @@ has_registration = practice_registrations.for_patient_on(
 ).exists_for_patient()
 
 dataset.define_population(has_registration)
-
+dataset.configure_dummy_data(population_size=5)
 dataset.sex = patients.sex
+dataset.age = patients.age_on(index_date)
